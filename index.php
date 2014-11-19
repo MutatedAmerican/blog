@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--creation of PHP Project: Blog--!>
 <!--
 Successfully log in XAMPP
 username-root
@@ -11,6 +12,7 @@ password-root
     </head>
     <body>
         <?php
+        //quick verification to project location
             echo "Web Server-Running Locally";
         ?>
     </body>
