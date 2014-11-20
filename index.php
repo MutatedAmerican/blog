@@ -12,8 +12,9 @@ password-root
     </head>
     <body>
         <?php
-        //quick verification to project location
-            echo "Web Server-Running Locally";
+        //bring and run all coding from create-db.php
+        //Fix PHP regarding path(__DIR__ .) 
+            require_once(__DIR__ ."/controller/create-db.php");
         ?>
     </body>
 </html>

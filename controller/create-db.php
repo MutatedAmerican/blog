@@ -1,6 +1,7 @@
 <?php
 //create connection to the server
-    require_once("../model/database.php");
+//Fix PHP regarding path(__DIR__ .)
+    require_once(__DIR__ ."/../model/database.php");
 
 //create active connection to the database to use the mysql server  
     $connection= new mysqli($host, $username, $password);
@@ -12,5 +13,5 @@
     else{
         echo "Success: ". $connection->host_info;
     }
-   
+//run   
     $connection->close();
