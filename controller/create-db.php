@@ -10,8 +10,14 @@
     if($connection->connect_error){
         die ("Error: ". $connection->connect_error);
     }
-    else{
-        echo "Success: ". $connection->host_info;
+
+    //select database on file
+    $exists= $connection->select_db($database);
+    
+    //test if exists
+    if(!$exists){
+        echo "Database does not exists";
     }
+    
 //run   
     $connection->close();
