@@ -8,7 +8,7 @@
     
 //check for connection errors   
     if($connection->connect_error){
-        die ("Error: ". $connection->connect_error);
+        die ("<p>Error: ". $connection->connect_error."</p>");
     }
 
     //select database
@@ -22,7 +22,7 @@
         
         //check if query was successful
         if ($query){
-            echo "Successfully created database: ". $database;
+            echo "<p>Successfully created database: ". $database."</p>";
         }
         
     }
@@ -37,7 +37,15 @@
             ."id int(11) NOT NULL AUTO_INCREMENT,"
             ."title varchar(255) NOT NULL,"
             ."post text NOT NULL,"
-            ."PRIMARY KEY(id)");
+            ."PRIMARY KEY(id))");
+    
+    //test if create table was successful
+    if($query){
+        echo "<p>Successfully create table: posts</p>";
+    }
+    
+    //if table already exists
+    echo "<p>$connection->error</p>";
     
 //run   
     $connection->close();
