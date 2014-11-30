@@ -11,12 +11,20 @@
         die ("Error: ". $connection->connect_error);
     }
 
-    //select database on file
+    //select database
     $exists= $connection->select_db($database);
     
     //test if exists
     if(!$exists){
-        echo "Database does not exists";
+        
+        //query and create database
+        $query= $connection->query("CREATE DATABASE $database");
+        
+        //check if queryy was successful
+        if ($query){
+            echo "Successfully created database: ". $database;
+        }
+        
     }
     
 //run   
