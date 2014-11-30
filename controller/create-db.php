@@ -29,7 +29,7 @@
     
     //if database already exists
     else{
-        echo "Database already exists";
+        echo "<p>Database already exists</p>";
     }
     
     //create table within database
