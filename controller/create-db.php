@@ -20,11 +20,16 @@
         //query and create database
         $query= $connection->query("CREATE DATABASE $database");
         
-        //check if queryy was successful
+        //check if query was successful
         if ($query){
             echo "Successfully created database: ". $database;
         }
         
+    }
+    
+    //if database already exists
+    else{
+        echo "Database already exists";
     }
     
 //run   
