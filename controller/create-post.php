@@ -9,9 +9,16 @@
         $title= filter_input(INPUT_POST, "title", FILTER_SANITIZE_STRING);
     //filter input from title and make sure its a string
         $post= filter_input(INPUT_POST, "post", FILTER_SANITIZE_STRING);
-    //print out title    
-        echo "<p>Title: ", $title,"</p>";
-    //print out post
-        echo "<p>Post: ", $post,"</p>";
+    //send info to query
+    $query= $connection->mysqli("INSERT INTO posts SET title= '$title', post= '$post'");
+    //whether it is a true statement or not
+    //true
+    if($query){
+        echo "<p>Successfully inserted post; $title</p>";
+    }
+    //false
+    else{
+        echo "<p>$connection->error</p>";
+    }
     //close connection
     $connection->close();
