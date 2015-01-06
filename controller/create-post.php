@@ -6,15 +6,15 @@
     $connection= new mysqli($host, $username, $password, $database);
 //receive info and store into variable
     //filter input from title and make sure its a string
-        $title= filter_input(INPUT_POST, "title", FILTER_SANITIZE_STRING);
+    $title= filter_input(INPUT_POST, "title", FILTER_SANITIZE_STRING);
     //filter input from title and make sure its a string
-        $post= filter_input(INPUT_POST, "post", FILTER_SANITIZE_STRING);
+    $post= filter_input(INPUT_POST, "post", FILTER_SANITIZE_STRING);
     //send info to query
-    $query= $connection->mysqli("INSERT INTO posts SET title= '$title', post= '$post'");
+    $query= $connection->query("INSERT INTO posts SET title= '$title', post= '$post'");
     //whether it is a true statement or not
     //true
     if($query){
-        echo "<p>Successfully inserted post; $title</p>";
+        echo "<p>Successfully inserted post: $title</p>";
     }
     //false
     else{
