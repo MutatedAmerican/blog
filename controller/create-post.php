@@ -1,7 +1,7 @@
 <!create post and put online database to server!>
     <?php
     //require database
-    require_once(__DIR__ ."/../model/database.php");
+    require_once(__DIR__ ."/../model/config.php");
     //create connection
     $connection= new mysqli($host, $username, $password, $database);
 //receive info and store into variable
