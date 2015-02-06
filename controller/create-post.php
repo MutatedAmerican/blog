@@ -2,8 +2,6 @@
     <?php
     //require database
     require_once(__DIR__ ."/../model/config.php");
-    //create connection
-    $connection= new mysqli($host, $username, $password, $database);
 //receive info and store into variable
     //filter input from title and make sure its a string
     $title= filter_input(INPUT_POST, "title", FILTER_SANITIZE_STRING);
@@ -20,5 +18,3 @@
     else{
         echo "<p>$connection->error</p>";
     }
-    //close connection
-    $connection->close();
