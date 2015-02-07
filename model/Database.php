@@ -9,6 +9,7 @@ class Database {
     private $username;
     private $password;
     private $database;
+    public $error;
 
     //gain access to variable
     public function __construct($host, $username, $password, $database) {
@@ -69,6 +70,11 @@ class Database {
         $this->openConnection();
 
         $query = $this->connection->query($string);
+        
+        //check if query is false
+        if(!$query){
+            $this->error= $this->connection->error;
+        }
 
         $this - closeConnection();
 
