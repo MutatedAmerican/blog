@@ -8,7 +8,7 @@
     //filter input from title and make sure its a string
     $post= filter_input(INPUT_POST, "post", FILTER_SANITIZE_STRING);
     //send info to query
-    $query= $connection->query("INSERT INTO posts SET title= '$title', post= '$post'");
+    $query= $_SESSION["connection"]->query("INSERT INTO posts SET title= '$title', post= '$post'");
     //whether it is a true statement or not
     //true
     if($query){
@@ -16,5 +16,5 @@
     }
     //false
     else{
-        echo "<p>$connection->error</p>";
+        echo "<p>". $_SESSION["connection"]. "->error</p>";
     }
