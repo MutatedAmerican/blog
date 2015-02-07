@@ -1,12 +1,17 @@
 <?php
 
-require_once (__DIR__."/database.php");
+require_once (__DIR__ . "/database.php");
+session_start();
 //path to all our project files
-$path= "/diazb-blog/";
+$path = "/diazb-blog/";
 //store database server information to connect
-    $host= "localhost";
-    $username= "root";
-    $password= "root";
-    $database= "blog_db";
+$host = "localhost";
+$username = "root";
+$password = "root";
+$database = "blog_db";
 
-    $connection= new Database($host, $username, $password, $database);
+if(!isset($_SESSION["connection"])) {
+    $connection = new Database($host, $username, $password, $database);
+
+    $_SESSION["connection"] = $connection;
+}
